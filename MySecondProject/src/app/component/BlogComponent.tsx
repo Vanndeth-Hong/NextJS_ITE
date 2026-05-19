@@ -5,6 +5,7 @@ interface BlogType {
     title: string;
     description: string;
     price: number;
+    rating: number;
     images: string[];
 }
 
@@ -23,7 +24,7 @@ export default function BlogComponent({ blog }: { blog: BlogType }) {
                         </svg>
                     ))}
                 </div>
-                <span className="bg-brand-softer border border-brand-subtle text-fg-brand-strong text-xs font-medium px-1.5 py-0.5 rounded-sm">4.8 out of 5</span>
+                <span className="bg-brand-softer border border-brand-subtle text-fg-brand-strong text-xs font-medium px-1.5 py-0.5 rounded-sm">{blog.rating.toFixed(1)}</span>
             </div>
 
             <Link href={`/blog/${blog.id}`}>
